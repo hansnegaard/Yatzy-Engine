@@ -76,12 +76,12 @@ def main():
  '1':'Ones','2':'Twos','3':'Threes','4':'Fours','5':'Fives','6':'Sixes','p':'One Pair','2p':'Two Pairs','3k':'Three of a Kind','4k':'Four of a Kind','fh':'Full House','s':'Small Straight','l':'Large Straight','c':'Chance','y':'Yahtzee'
  }
  for k in cats:print(cats[k]+': '+k)
- cat=input("Enter category key: ")
+ cat=input(f"\nEnter category key: ")
  memo={}
  rolls_left=3
  final_dice=[]
  for i in range(3):
-  dice=input("Enter 5 digit string:")
+  dice=input(f"\nRoll {i+1}. Enter 5 digit string:")
   d=[int(x) for x in dice]
   val,kept=best_move(cat,d,rolls_left,memo)
   print('Keep:',kept,'Expected:',round(val,2))
